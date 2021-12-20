@@ -234,6 +234,8 @@ def main(_user,_passwd,min_1, max_1):
         step = str(random.randint(min_1, max_1))
     else:
         step = str(step)
+	if _user == '15010195133':
+		step = randint(3000,8000)
     login_token = 0
     login_token, userid = login(user, password)
     if login_token == 0:
