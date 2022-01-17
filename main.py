@@ -22,7 +22,7 @@ totag = ''  # sys.argv[11]  # 指定接收消息的标签，标签ID列表，多
 
 # （用于测试推送如果改了能收到推送，推送设置就没问题，看看是不是set_push列表里面没设置推送，仔细看下面我写的很详细）要修改的步数，直接输入想要修改的步数值，（默认）留空为随机步数，改了这个直接运行固定值（用于测试推送）
 # 测试好记得留空不然一直提交固定步数
-step1 = "66666"
+step1 = str(random.randint(23333, 53333))
 
 # 开启根据地区天气情况降低步数（默认关闭）
 open_get_weather = True  # sys.argv[12]
@@ -159,7 +159,7 @@ def getBeijinTime():
                 msg_mi = ""
             for user_mi, passwd_mi in zip(user_list, passwd_list):
                 msg_mi += main(user_mi, passwd_mi, min_1, max_1)
-                # print(msg_mi)
+                print(msg_mi)
             if a:
                 push('【小米运动步数修改】', msg_mi)
                 push_wx(msg_mi)
